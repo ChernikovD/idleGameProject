@@ -81,6 +81,25 @@ public:
             itemPriceTexts[i].setFillColor(sf::Color::White);
             itemPriceTexts[i].setPosition(100 + i * 400, 450);
         }
+        
+        // Устанавливаем шрифт для текста описания предметов
+        item1Description.setFont(font);
+        item1Description.setCharacterSize(24);
+        item1Description.setFillColor(sf::Color::White);
+        item1Description.setPosition(100, 150);
+        item1Description.setString("+1 GOLD per click");
+
+        item2Description.setFont(font);
+        item2Description.setCharacterSize(24);
+        item2Description.setFillColor(sf::Color::White);
+        item2Description.setPosition(500, 150);
+        item2Description.setString("+25 GOLD per 10 clicks");
+
+        item3Description.setFont(font);
+        item3Description.setCharacterSize(24);
+        item3Description.setFillColor(sf::Color::White);
+        item3Description.setPosition(900, 150);
+        item3Description.setString("+5 GOLD per second");
 
         // Устанавливаем шрифт для текста счета
         scoreText.setFont(font);
@@ -104,6 +123,9 @@ public:
         window.draw(backgroundSprite);
         window.draw(closeShopSprite);
         window.draw(scoreText);
+        window.draw(item1Description);
+        window.draw(item2Description);
+        window.draw(item3Description);
         for (int i = 0; i < 3; ++i) {
             window.draw(itemSprites[i]);
             window.draw(buyButtonSprites[i]);
@@ -175,6 +197,9 @@ private:
     sf::Text itemCountTexts[3];
     sf::Text itemPriceTexts[3];
     sf::Text scoreText;
+    sf::Text item1Description;
+    sf::Text item2Description;
+    sf::Text item3Description;
     int itemCounts[3];
     Price itemPrices[3];
 };
